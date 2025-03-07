@@ -67,6 +67,11 @@
     }
   };
 
+  var deviceOrientationControlMethod = new Marzipano.DeviceOrientationControlMethod();
+    var controls = viewer.controls();
+    controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
+    controls.enableMethod('deviceOrientation');
+
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
