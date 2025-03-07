@@ -69,13 +69,14 @@
 
   
 
-  var deviceOrientationControlMethod = new Marzipano.DeviceOrientationControlMethod();
-    var controls = viewer.controls();
-    controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
-    controls.enableMethod('deviceOrientation');
-
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+
+  // Now create and register the device orientation control.
+  var deviceOrientationControlMethod = new Marzipano.DeviceOrientationControlMethod();
+  var controls = viewer.controls();
+  controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
+  controls.enableMethod('deviceOrientation');
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
